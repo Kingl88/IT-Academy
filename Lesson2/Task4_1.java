@@ -4,14 +4,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Task1_12 {
+public class Task4_1 {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int t = Integer.parseInt(reader.readLine());
-        int v = Integer.parseInt(reader.readLine());
+        System.out.print("Введите значение x = ");
         int x = Integer.parseInt(reader.readLine());
-        int y = Integer.parseInt(reader.readLine());
-        System.out.println("5 10" + "\t100 " + t + "\t" + x + " 25" + "\n7 см" + "\t1949 " + v + "\t" + x +" " + y);
+        double y;
+        if(x > 0){
+            y = Math.pow(Math.sin(x), 2);
+        } else{
+            y = 1 - Math.sin(Math.pow(x, 2));
+        }
+        System.out.printf("y = %.2f", y);
         reader.close();
     }
 }
