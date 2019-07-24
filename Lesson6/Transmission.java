@@ -10,7 +10,7 @@ public abstract class Transmission {
         this.numberOfGear = numberOfGear;
     }
 
-    public abstract void positionBellCrank(Object obj); // Положение рычага коробки передач
+    public abstract <T> void positionBellCrank(T obj); // Положение рычага коробки передач
 
     public byte getNumberOfGear() {
         return numberOfGear;

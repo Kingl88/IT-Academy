@@ -7,16 +7,12 @@ public class MechanicalTransmission extends Transmission {
     }
 
     @Override
-    public void positionBellCrank(Object obj) {
-        if(obj instanceof String && obj.toString() == "N") {
+    public<T> void positionBellCrank(T obj) {
+        if(obj == "N") {
             System.out.println("Поставить рычаг в нейтральное положение");
         } else {
             try {
-                if(Integer.valueOf(String.valueOf(obj)) instanceof Integer) {
                     System.out.println("Включить передачу номер " + Integer.parseInt(String.valueOf(obj)));
-                } else {
-                    throw new Exception();
-                }
             } catch (Exception e) {
                 e.printStackTrace();
             }

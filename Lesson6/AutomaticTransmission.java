@@ -8,8 +8,8 @@ public class AutomaticTransmission extends Transmission {
     }
 
     @Override
-    public void positionBellCrank(Object obj) {
-        if(obj instanceof String && !(Integer.valueOf(String.valueOf(obj)) instanceof Integer)) {
+    public <T> void positionBellCrank(T obj) {
+        {
             System.out.println("Перевести рычаг автоматической коробки передач в положение " + obj.toString());
         }
     }

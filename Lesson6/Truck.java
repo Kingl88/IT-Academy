@@ -5,8 +5,8 @@ import java.util.Objects;
 public class Truck extends Car{
     private int maxWeight;
 
-    public Truck(int wheelCount, int axisCount, int seatCount, int weight, Engine engine, Transmission transmission, int maxWeight) throws Exception {
-        super(wheelCount, axisCount, seatCount, weight, engine, transmission);
+    public Truck(int wheelCount, int axisCount, int seatCount, int weight, Engine engine, Transmission transmission, Steerage steerage, int maxWeight) throws Exception {
+        super(wheelCount, axisCount, seatCount, weight, engine, transmission, steerage);
         this.maxWeight = maxWeight;
     }
 

@@ -5,8 +5,8 @@ import java.util.Objects;
 public class PassengerCar extends Car {
     private String typeBody;
 
-    public PassengerCar(int wheelCount, int axisCount, int seatCount, int weight, Engine engine, Transmission transmission, String typeBody) throws Exception {
-        super(wheelCount, axisCount, seatCount, weight, engine, transmission);
+    public PassengerCar(int wheelCount, int axisCount, int seatCount, int weight, Engine engine, Transmission transmission, Steerage steerage, String typeBody) throws Exception {
+        super(wheelCount, axisCount, seatCount, weight, engine, transmission, steerage);
         this.typeBody = typeBody;
     }
 

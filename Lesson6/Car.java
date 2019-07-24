@@ -3,16 +3,17 @@ package by.it_academy.Lesson6.carlib;
 import java.util.Objects;
 
 public abstract class Car {
-    private int wheelCount; // Количество колес
-    private int axisCount; // Количество осей
-    private int seatCount; // Количество пассажирских мест
-    private int weight; //Вес автомобиля
+    private int wheelCount; // Количество колес.
+    private int axisCount; // Количество осей.
+    private int seatCount; // Количество пассажирских мест.
+    private int weight; //Вес автомобиля.
     private int currentSpeed; // Текущая скорость автомобиля.
 
-    private final Engine engine; // Двигатель автомобиля
-    private final Transmission transmission; // Коробка передач
+    private final Engine engine; // Двигатель автомобиля.
+    private final Transmission transmission; // Коробка передач.
+    private final Steerage steerage; // Рулевоо управление.
 
-    public Car(int wheelCount, int axisCount, int seatCount, int weight, Engine engine, Transmission transmission) throws Exception {
+    public Car(int wheelCount, int axisCount, int seatCount, int weight, Engine engine, Transmission transmission, Steerage steerage) throws Exception {
         this.wheelCount = wheelCount;
         this.axisCount = axisCount;
         this.seatCount = seatCount;
@@ -23,7 +24,11 @@ public abstract class Car {
         } else {
             throw new Exception();
         }
-
+        if (steerage != null) {
+            this.steerage = steerage;
+        } else {
+            throw new Exception();
+        }
         if (engine != null) {
             this.engine = engine;
         } else {
@@ -68,6 +73,14 @@ public abstract class Car {
         System.out.println("Нажимаем педаль тормоза");
     }
 
+    public void left(Rotation obj, int i) {
+        obj.left(i);
+    }
+
+    public void right(Rotation obj, int i) {
+        obj.right(i);
+    }
+
     public int getWheelCount() {
         return wheelCount;
     }
@@ -106,6 +119,10 @@ public abstract class Car {
 
     public Transmission getTransmission() {
         return transmission;
+    }
+
+    public Steerage getSteerage() {
+        return steerage;
     }
 
     public int getCurrentSpeed() {
