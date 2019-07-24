@@ -3,13 +3,12 @@ package by.it_academy.Lesson7._124_a_4;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class District {
+public class District extends Territory {
 
     private ArrayList<City> city = new ArrayList<>();;
-    private String nameDistrict;
 
     public District(String nameDistrict) {
-        this.nameDistrict = nameDistrict;
+        super(nameDistrict);
     }
     public void setCity(String nameCity, boolean isCapital, boolean isRegionalCentr) {
         this.city.add(new City(nameCity, isCapital, isRegionalCentr));
@@ -22,16 +21,8 @@ public class District {
         this.city = city;
     }
 
-    public String getNameDistrict() {
-        return nameDistrict;
-    }
-
-    public void setNameDistrict(String nameDistrict) {
-        this.nameDistrict = nameDistrict;
-    }
-
     @Override
     public String toString() {
-        return nameDistrict + " район " + "\n Количесвто городов " + city.size() + "\n" + Arrays.toString(city.toArray());
+        return getName() + " район " + "\n Количесвто городов " + city.size() + "\n" + Arrays.toString(city.toArray());
     }
 }
