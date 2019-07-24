@@ -199,7 +199,7 @@ public class Test {
                                             "\n для выхода в предыдущее меню нажмите \"0\"");
                                     String nameCity = reader.readLine();
                                     if (!nameCity.equals("0")) {
-                                        System.out.println("Город " + nameCity + " является столицей " + country.getNameCountry() + " да/нет");
+                                        System.out.println("Город " + nameCity + " является столицей " + country.getName() + " да/нет");
                                         String temp = reader.readLine();
                                         if(temp.equals("да")) {
                                             country.addCity(nameCity, reader, i, j);
