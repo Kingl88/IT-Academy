@@ -129,62 +129,62 @@ public class Car implements Externalizable {
         switch (number) {
             case 1: {
                 Audi[] audis = Audi.values();
-                Enum temp = model(audis, reader);
-                model = ((Audi) temp).getName();
-                startOfRelease = ((Audi) temp).getStartOfRelease();
-                endOfRelease = ((Audi) temp).getEndOfRelease();
-                price = ((Audi) temp).getPrice();
+                Audi temp = model(audis, reader);
+                model = temp.getName();
+                startOfRelease = temp.getStartOfRelease();
+                endOfRelease =  temp.getEndOfRelease();
+                price = temp.getPrice();
                 break;
             }
             case 2: {
                 Bmw[] bmw = Bmw.values();
-                Enum temp = model(bmw, reader);
-                model = ((Bmw) temp).getName();
-                startOfRelease = ((Bmw) temp).getStartOfRelease();
-                endOfRelease = ((Bmw) temp).getEndOfRelease();
-                price = ((Bmw) temp).getPrice();
+                Bmw temp = model(bmw, reader);
+                model = temp.getName();
+                startOfRelease = temp.getStartOfRelease();
+                endOfRelease = temp.getEndOfRelease();
+                price = temp.getPrice();
                 break;
             }
             case 3: {
                 Mercedes[] mercedes = Mercedes.values();
-                Enum temp = model(mercedes, reader);
-                model = ((Mercedes) temp).getName();
-                startOfRelease = ((Mercedes) temp).getStartOfRelease();
-                endOfRelease = ((Mercedes) temp).getEndOfRelease();
-                price = ((Mercedes) temp).getPrice();
+                Mercedes temp = model(mercedes, reader);
+                model = temp.getName();
+                startOfRelease = temp.getStartOfRelease();
+                endOfRelease = temp.getEndOfRelease();
+                price = temp.getPrice();
                 break;
             }
             case 4: {
                 Volkswagen[] volkswagens = Volkswagen.values();
-                Enum temp = model(volkswagens, reader);
-                model = ((Volkswagen) temp).getName();
-                startOfRelease = ((Volkswagen) temp).getStartOfRelease();
-                endOfRelease = ((Volkswagen) temp).getEndOfRelease();
-                price = ((Volkswagen) temp).getPrice();
+                Volkswagen temp = model(volkswagens, reader);
+                model = temp.getName();
+                startOfRelease = temp.getStartOfRelease();
+                endOfRelease = temp.getEndOfRelease();
+                price = temp.getPrice();
                 break;
             }
             case 5: {
                 Porsche[] porsches = Porsche.values();
-                Enum temp = model(porsches, reader);
-                model = ((Porsche) temp).getName();
-                startOfRelease = ((Porsche) temp).getStartOfRelease();
-                endOfRelease = ((Porsche) temp).getEndOfRelease();
-                price = ((Porsche) temp).getPrice();
+                Porsche temp = model(porsches, reader);
+                model = temp.getName();
+                startOfRelease = temp.getStartOfRelease();
+                endOfRelease = temp.getEndOfRelease();
+                price = temp.getPrice();
                 break;
             }
             case 6: {
                 Opel[] opels = Opel.values();
-                Enum temp = model(opels, reader);
-                model = ((Opel) temp).getName();
-                startOfRelease = ((Opel) temp).getStartOfRelease();
-                endOfRelease = ((Opel) temp).getEndOfRelease();
-                price = ((Opel) temp).getPrice();
+                Opel temp = model(opels, reader);
+                model = temp.getName();
+                startOfRelease = temp.getStartOfRelease();
+                endOfRelease = temp.getEndOfRelease();
+                price = temp.getPrice();
                 break;
             }
         }
     }
 
-    private <T> Enum model(T[] cars, BufferedReader reader) {
+    private <T> T model(T[] cars, BufferedReader reader) {
         int num;
         System.out.println("Доступные модели автомобилей:");
         for (int i = 0; i < cars.length; i++) {
@@ -202,7 +202,7 @@ public class Car implements Externalizable {
                 System.out.println("Введите число от 1 до " + cars.length);
             }
         }
-        return (Enum) cars[num - 1];
+        return cars[num - 1];
     }
 
     public TypeEngine getTypeEngine() {
