@@ -1,5 +1,6 @@
 package by.it_academy.Lesson10;
 
+
 import java.io.*;
 
 public class Main {
@@ -80,7 +81,7 @@ public class Main {
     }
 
     static CarShowroom createCarShowroom() {
-        File file = new File("src\\by\\it_academy\\Lesson9\\carShowroom.txt").getAbsoluteFile();
+        File file = new File("src\\by\\it_academy\\Lesson10\\carShowroom.txt").getAbsoluteFile();
         FileInputStream fileInputStream;
         CarShowroom carShowroom = null;
         try {
@@ -88,6 +89,9 @@ public class Main {
                 fileInputStream = new FileInputStream(file);
                 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
                 carShowroom = (CarShowroom) objectInputStream.readObject();
+                if(carShowroom == null) {
+                    carShowroom = new CarShowroom("АвтоМир", " г. Минск, проспект Мира, 29");
+                }
             } else {
                 carShowroom = new CarShowroom("АвтоМир", " г. Минск, проспект Мира, 29");
             }
@@ -102,7 +106,7 @@ public class Main {
     }
 
     static void serializable(CarShowroom carShowroom) {
-        File file = new File("src\\by\\it_academy\\Lesson9\\carShowroom.txt").getAbsoluteFile();
+        File file = new File("src\\by\\it_academy\\Lesson10\\carShowroom.txt").getAbsoluteFile();
         FileOutputStream outputStream;
         try {
             outputStream = new FileOutputStream(file);
